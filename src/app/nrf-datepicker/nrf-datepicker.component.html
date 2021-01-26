@@ -1,0 +1,29 @@
+<table>
+	<thead>
+		<tr>
+			<th><button type="button" (click)="onPrev()"><</button></th>
+			<th colspan="6">{{getMonthHeader(month)}} {{year}}</th>
+			<th><button type="button" (click)="onNext()">></button></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th>S</th>
+			<th>M</th>
+			<th>T</th>
+			<th>W</th>
+			<th>T</th>
+			<th>F</th>
+			<th>S</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let week of calendar; let i = index">
+			<td class="fiscal-week">{{getStartingWeek() + i}}</td>
+			<td *ngFor="let day of week" [ngClass]="isSelectedDate(day)" (mouseup)="onSelectDate(day)" class="day">
+				{{getDay(day)}}
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Selected Date: <b>{{ getSelectedDate() }}</b></p>

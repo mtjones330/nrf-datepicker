@@ -1,0 +1,31 @@
+.fiscal-week {
+  color: red;
+}
+
+tr td:hover.day:not(.selectedDate) {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.selectedDate {
+  background-color: orange;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+  padding: 5px;
+}
+
+th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
